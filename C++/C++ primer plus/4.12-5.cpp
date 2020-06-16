@@ -1,0 +1,1 @@
+cout<<ideas[2];
