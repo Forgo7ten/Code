@@ -12,10 +12,13 @@ int setgolf(golf& g)
 {
     if (std::cin.get(g.fullname,Len))
     {
-        std::cin.get();
+		while ((std::cin.get()) != '\n');
         (std::cin >> g.handicap).get();
         return 1;
     }
+	g.handicap = 0;
+	std::cin.clear();
+    while ((std::cin.get()) != '\n');
     return 0;
 }
 
