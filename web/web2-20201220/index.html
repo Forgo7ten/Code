@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+	<meta charset="utf-8">
+	<title>这才是你的舞台！</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/index.css">
+	<script type="text/javascript" charset="utf-8" src="./js/L2Dwidget.0.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./js/L2Dwidget.min.js"></script>
+
+</head>
+
+<body>
+	<!-- js效果start -->
+	<script src="./js/index.js"></script>
+	<div id="turnTop"></div><br>
+	<script>
+		var oDiv = document.getElementById("turnTop");
+		turnToTop.init(oDiv, 100);
+	</script>
+
+	<!-- 上方添加js效果 -->
+	<div class="da_head">
+		<div class="header container clear">
+			<img src="img/logo.jpg" alt="logo图" class="logo">
+			<div class="head_li">
+				<ul class="clear">
+					<li class="head_li"><a class="head_li_a head_li_a1" href="#">首页</a></li>
+					<li class="head_li"><a class="head_li_a" href="#team">战队简介</a></li>
+					<li class="head_li"><a class="head_li_a" href="#team">加入我们</a></li>
+					<li class="head_li head_li4">
+						用户登录
+						<form class="login_form clear">
+							<div class="login_div">
+								<span class="login">用户名：</span><input type="text" name="user" placeholder="请输入用户名"
+									class="user" id="yonghuming"><input type="submit" value="注册" name="sub"
+									class="submit2" onclick="kongCheck()">
+							</div>
+							<div class="login_div">
+								<span class="login"><span class="pword_left">密</span><span
+										class="pword_right">码：</span></span><input type="password" name="password"
+									placeholder="请输入密码" class="password" id="mima">
+								<input type="submit" value="登录" name="sub" class="submit1" onclick="kongCheck()">
+							</div>
+							<script>
+								yonghuming = document.getElementById("yonghuming");
+								mima = document.getElementById("mima");
+
+								function kongCheck() {
+									if (yonghuming.value == "" && mima.value == "")
+										alert("用户名和密码不能为空");
+									else if (yonghuming.value == "" && mima.value != "")
+										alert("用户名不能为空！");
+									else if (yonghuming.value != "" && mima.value == "")
+										alert("密码不能为空！");
+								}
+							</script>
+						</form>
+
+					</li>
+					<li class="head_li head_li5">
+						搜索
+						<form class="head_form clear">
+							<input type="text" placeholder="为满足作业要求写的搜索框" class="search" id="search-kuang" />
+							<input type="button" class="submit" id="search-button" />
+							<script>
+								search_button = document.getElementById("search-button");
+								search_kuang = document.getElementById("search-kuang");
+								search_button.onclick = function () {
+									if (search_kuang.value == "")
+										alert("请输入搜索内容");
+								}
+							</script>
+						</form>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="banner">
+		<div class="banner_div container">
+			<div class="banner_menu">
+				<ul>
+					<li class="banner_menu_li clear">
+						<span>CTF简介<span class="banner_menu_span">></span></span>
+						<div class="banner_menu_div">
+							<h1 class="line">CTF</h1>
+							<h2 class="line">（夺旗赛）</h2>
+							<p class="banner_div_p">
+								CTF（Capture The
+								Flag）中文一般译作夺旗赛，在网络安全领域中指的是网络安全技术人员之间进行技术竞技的一种比赛形式。CTF起源于1996年DEFCON全球黑客大会，以代替之前黑客们通过互相发起真实攻击进行技术比拼的方式。发展至今，已经成为全球范围网络安全圈流行的竞赛形式，2013年全球举办了超过五十场国际性CTF赛事。而DEFCON作为CTF赛制的发源地，DEFCON
+								CTF也成为了目前全球最高技术水平和影响力的CTF竞赛，类似于CTF赛场中的“世界杯” 。
+							</p>
+							<h2 class="line">赛事介绍</h2>
+							<p class="banner_div_p">
+								CTF是一种流行的信息安全竞赛形式，其英文名可直译为“夺得Flag”，也可意译为“夺旗赛”。其大致流程是，参赛团队之间通过进行攻防对抗、程序分析等形式，率先从主办方给出的比赛环境中得到一串具有一定格式的字符串或其他内容，并将其提交给主办方，从而夺得分数。为了方便称呼，我们把这样的内容称之为“Flag”。
+							</p>
+							<h2 class="line">竞赛模式</h2>
+							<p class="banner_div_p">
+								一、解题模式（Jeopardy）
+							</p>
+							<p class="banner_div_p">
+								在解题模式CTF赛制中，参赛队伍可以通过互联网或者现场网络参与，这种模式的CTF竞赛与ACM编程竞赛、信息学奥赛比较类似，以解决网络安全技术挑战题目的分值和时间来排名，通常用于在线选拔赛。题目主要包含逆向、漏洞挖掘与利用、Web渗透、密码、取证、隐写、安全编程等类别。
+							</p>
+							<p class="banner_div_p">
+								二、攻防模式（Attack-Defense）
+							</p>
+							<p class="banner_div_p">
+								在攻防模式CTF赛制中，参赛队伍在网络空间互相进行攻击和防守，挖掘网络服务漏洞并攻击对手服务来得分，修补自身服务漏洞进行防御来避免丢分。攻防模式CTF赛制可以实时通过得分反映出比赛情况，最终也以得分直接分出胜负，是一种竞争激烈，具有很强观赏性和高度透明性的网络安全赛制。在这种赛制中，不仅仅是比参赛队员的智力和技术，也比体力（因为比赛一般都会持续48小时及以上），同时也比团队之间的分工配合与合作。
+							</p>
+							<p class="banner_div_p">
+								三、混合模式（Mix）
+							</p>
+							<p class="banner_div_p">
+								结合了解题模式与攻防模式的CTF赛制，比如参赛队伍通过解题可以获取一些初始分数，然后通过攻防对抗进行得分增减的零和游戏，最终以得分高低分出胜负。采用混合模式CTF赛制的典型代表如iCTF国际CTF竞赛。
+							</p>
+						</div>
+					</li>
+					<li class="banner_menu_li clear">
+						<span>CTF-Web<span class="banner_menu_span">></span></span>
+						<div class="banner_menu_div">
+							<h1>Web 应用简介</h1>
+							<p class="banner_div_p">
+								随着 WEB 2.0、社交网络、微博等等一系列新型的互联网产品的诞生，基于 WEB 环境的互联网应用越来越广泛，企业信息化的过程中各种应用都架设在 WEB 平台上，WEB
+								业务的迅速发展也引起黑客们的强烈关注，接踵而至的就是 WEB 安全威胁的凸显，黑客利用网站操作系统的漏洞和 WEB 服务程序的漏洞得到 WEB
+								服务器的控制权限，轻则篡改网页内容，重则窃取重要内部数据，更为严重的则是在网页中植入恶意代码，使得网站访问者受到侵害。
+							</p>
+							<p class="banner_div_p">
+								在 CTF 竞赛中，WEB 也是占比重很大的一个方向之一，WEB 类的题目种类繁多，知识点细碎，时效性强，能紧跟时下热点漏洞，贴近实战。
+							</p>
+							<p class="banner_div_p">
+								WEB 类的题目包括但不限于：SQL 注入、XSS 跨站脚本、CSRF 跨站请求伪造、文件上传、文件包含、框架安全、PHP 常见漏洞、代码审计等。
+							</p>
+						</div>
+					</li>
+					<li class="banner_menu_li clear">
+						<span>CTF-Pwn<span class="banner_menu_span">></span></span>
+						<div class="banner_menu_div">
+							<h1>Pwn简介</h1>
+							<p class="banner_div_p">
+								”Pwn”是一个黑客语法的俚语词，是指攻破设备或者系统。发音类似“砰”，对黑客而言，这就是成功实施黑客攻击的声音——砰的一声，被“黑”的电脑或手机就被你操纵了。</p>
+							<p class="banner_div_p">
+								CTF中的pwn指的是通过通过程序本身的漏洞，编写利用脚本破解程序拿到主机的权限，这就需要对程序进行分析，了解操作系统的特性和相关漏洞，是是一个难度比较大的分支。</p>
+							<p class="banner_div_p">CTF比赛中Pwn的一些方向：</p>
+							<p class="banner_div_p">• &nbsp;&nbsp;GLIBC Pwn：通常是与 linux 下的内存管理有关</p>
+							<p class="banner_div_p">• &nbsp;&nbsp;Browser Pwn：与浏览器相关的 Pwn</p>
+							<p class="banner_div_p">• &nbsp;&nbsp;Kernel Pwn：内核pwn，就Linux kernel的漏洞而言，多是 LKM
+								的漏洞，通过这些漏洞达到提权以及获取稳定shell等目的。</p>
+							<p class="banner_div_p"></p>
+						</div>
+					</li>
+					<li class="banner_menu_li clear">
+						<span>CTF-Reverse<span class="banner_menu_span">></span></span>
+						<div class="banner_menu_div">
+							<h1>软件逆向工程简介</h1><br>
+							<h2>定义</h2>
+							<p class="banner_div_p">
+								Reverse engineering, also called back engineering, is the process by which a man-made
+								object is deconstructed to reveal its designs, architecture, or to extract knowledge
+								from the object; ------ from wikipedia
+							</p>
+							<p class="banner_div_p">
+								软件代码逆向主要指对软件的结构，流程，算法，代码等进行逆向拆解和分析。
+							</p>
+							<h2>应用领域</h2>
+							<p class="banner_div_p">
+								主要应用于软件维护，软件破解，漏洞挖掘，恶意代码分析。
+							</p>
+							<h2>CTF竞赛中的逆向</h2>
+							<p class="banner_div_p">
+								涉及 Windows、Linux、Android 平台的多种编程技术，要求利用常用工具对源代码及二进制文件进行逆向分析，掌握 Android
+								移动应用APK文件的逆向分析，掌握加解密、内核编程、算法、反调试和代码混淆技术。 ------ 《全国大学生信息安全竞赛参赛指南》
+							</p>
+							<h3>要求</h3>
+							<p class="banner_div_p">
+								• &nbsp;&nbsp;熟悉如操作系统，汇编语言，加解密等相关知识
+							</p>
+							<p class="banner_div_p">
+								• &nbsp;&nbsp;具有丰富的多种高级语言的编程经验
+							</p>
+							<p class="banner_div_p">
+								• &nbsp;&nbsp;熟悉多种编译器的编译原理
+							</p>
+							<p class="banner_div_p">
+								• &nbsp;&nbsp;较强的程序理解和逆向分析能力
+							</p>
+						</div>
+					</li>
+					<li class="banner_menu_li clear">
+						<span>CTF-Crypto<span class="banner_menu_span">></span></span>
+						<div class="banner_menu_div">
+							<h1>密码学简介</h1>
+							<p class="banner_div_p">密码学（Cryptography）一般可分为古典密码学和现代密码学。</p>
+							<p class="banner_div_p">
+								其中，古典密码学，作为一种实用性艺术存在，其编码和破译通常依赖于设计者和敌手的创造力与技巧，并没有对密码学原件进行清晰的定义。古典密码学主要包含：单表替换加密（Monoalphabetic
+								Cipher）、多表替换加密（Polyalphabetic Cipher），以及各种奇奇怪怪的加密方式</p>
+							<p class="banner_div_p">而现代密码学则起源于 20 世纪中后期出现的大量相关理论，1949 年香农（C. E.
+								Shannon）发表了题为《保密系统的通信理论》的经典论文标志着现代密码学的开始。现代密码学主要包含以下几个方面：</p>
+							<p class="banner_div_p">对称加密（Symmetric Cryptography），以 DES，AES，RC4 为代表。</p>
+							<p class="banner_div_p">非对称加密（Asymmetric Cryptography），以 RSA，ElGamal，椭圆曲线加密为代表。</p>
+							<p class="banner_div_p">哈希函数（Hash Function），以 MD5，SHA-1，SHA-512 等为代表。</p>
+							<p class="banner_div_p">数字签名（Digital Signature），以 RSA 签名，ElGamal 签名，DSA 签名为代表。</p>
+							<p class="banner_div_p">其中，对称加密体制还分为两种方式：分组密码（Block Cipher），又称为块密码；序列密码（Stream
+								Cipher），又称为流密码。</p>
+							<p class="banner_div_p">
+								一般来说，密码设计者的根本目标是保障信息及信息系统的机密性（Confidentiality）、完整性（Integrity）、可用性（Availability）、认证性（Authentication）以及不可否认性（Non-repudiation）。其中，前三者被称为信息安全的
+								CIA 三要素 。</p>
+							<p class="banner_div_p">
+								而对于密码破解者来说，一般是要想办法识别出密码算法，然后进行暴力破解，或者利用密码体制的漏洞进行破解。当然，也有可能通过构造虚假的哈希值或者数字签名来绕过相应的检测。一般来说，我们都会假设攻击者已知待破解的密码体制，而攻击类型通常分为以下四种：唯密文攻击、已知明文攻击、选择明文攻击、选择密文攻击。
+							</p>
+						</div>
+					</li>
+					<li class="banner_menu_li clear">
+						<span>CTF-Misc<span class="banner_menu_span">></span></span>
+						<div class="banner_menu_div">
+							<h1>杂项简介</h1>
+							<p class="banner_div_p">
+								Misc 是英文 Miscellaneous 的前四个字母，杂项、混合体、大杂烩的意思。
+							</p>
+							<p class="banner_div_p">
+								在 CTF-Misc 中，主要有以下几个方面：
+							</p>
+							<div class="banner_menu_div_misc">
+								<p class="banner_div_p">
+									• &nbsp;&nbsp;Recon（信息搜集）<br>
+									一些获取信息的渠道和一些利用百度、谷歌等搜索引擎的技巧
+								</p>
+								<p class="banner_div_p">
+									• &nbsp;&nbsp;Encode（编码转换）<br>
+									在 CTF 比赛中一些常见的编码形式以及转换的技巧和常见方式
+								</p>
+								<p class="banner_div_p">
+									• &nbsp;&nbsp;Forensic && Stego（数字取证 && 隐写分析）<br>
+									隐写取证是 Misc
+									中最为重要的一块，包括文件分析、隐写、内存镜像分析和流量抓包分析等等，涉及巧妙的编码、隐藏数据、层层嵌套的文件中的文件，灵活利用搜索引擎获取所需要的信息等等。
+								</p>
+							</div>
+							<p class="banner_div_p">CTF 中 Misc 与现实中的取证不同，现实中的取证很少会涉及巧妙的编码加密，数据隐藏，被分散嵌套在各处的文件字符串，或是其他脑洞类的
+								Chanllenge。很多时候是去精心恢复一个残损的文件，挖掘损坏硬盘中的蛛丝马迹,或者从内存镜像中抽取有用的信息。</p>
+							<p class="banner_div_p">
+								现实的取证需要从业者能够找出间接的恶意行为证据：攻击者攻击系统的痕迹，或是内部威胁行为的痕迹。实际工作中计算机取证大部分是从日志、内存、文件系统中找出犯罪线索，并找出与文件或文件系统中数据的关系。而流量取证比起内容数据的分析，更注重元数据的分析，也就是当前不同端点间常用
+								TLS 加密的网络会话。</p>
+							<p class="banner_div_p">Misc 是切入 CTF 竞赛领域、培养兴趣的最佳入口。Misc
+								考察基本知识，对安全技能的各个层面都有不同程度的涉及，可以在很大程度上启发思维。</p>
+						</div>
+					</li>
+					<li class="banner_menu_li clear">
+						<span>关于SourceCode战队<span class="banner_menu_span">></span></span>
+						<div class="banner_menu_div">
+							<h1>战队介绍</h1>
+							<p class="banner_div_p">
+								SourceCode战队最初成立于2017年初，曾隶属于软件学院源码公社，时任副社长吴旭东创立源码公社信安分部，其核心战队借源码二字英文SourceCode命名。SourceCode也算是对大家的一个期许。希望大家多从根源来寻找本质问题。17年底，受到河北省网络与信息安全安全重点实验室赏识，获得其大力支持。至今获奖无数
+								. . .
+								。在老师的支持下，我们有自己的实验室，服务器，以及各种研究设备。目前战队隶属于河北省网络与信息安全重点实验室，是河北师范大学唯一一个本科生网络安全团队。由王方伟教授，王长广教授带领培养，并且备受学校重视。
+							</p>
+							<h2>战队经历</h2>
+							<p class="banner_div_p">
+								我们是由一个由热爱计算机网络安全技术的少年自发组成的团队。简单来说，我们所研究的技术，都是最新的黑客技术。但是，我们却是黑客的对立面——白帽子。我们要做的，就是在黑客前一步发现网络中所存在的安全隐患，保护网络信息安全。
+							</p>
+							<p class="banner_div_p">
+								我们团队当然也不仅仅是打各种类型的CTF比赛，更有许多丰富的经历。我们曾为腾讯，阿里，金山，58同城，360等多家知名互联网公司报送安全漏洞。当然，大家最熟悉的学校，也是我们的重点客户。
+							</p>
+							<p class="banner_div_p">
+								2017年我们与网络中心已经建立了漏洞响应计划。至今，我们已为学校报送多个高危安全漏洞，涉及学生及教师信息资料数万条，以及多个敏感服务器。</p>
+							<p class="banner_div_p">我们，在默默保卫着学校网络安全。</p>
+							<h2>战队福利</h2>
+							<p class="banner_div_p">学长手把手教学、定期组织实战技能培训，包括Web安全、无线网络安全、软件安全、移动应用逆向、Linux运维、以及当前最火的区块链安全等。
+							</p>
+							<p class="banner_div_p">我们定期还会邀请一些著名的互联网企业的大神们分享传授技能、分享经验。</p>
+							<p class="banner_div_p">同时为了方便于大家的日常学习，我们拥有实验室，每人都有工位。我们还有自己的公共服务器给予大家学习。</p>
+							<p class="banner_div_p">更有享用免费资料，公费报销，比赛奖金，就业优势等诸多福利。</p>
+						</div>
+					</li>
+					<li class="banner_menu_li clear" id="banner_nofirst_li">
+						<span>CTF学习</span><span class="banner_menu_span">></span>
+						<ul class="banner_li_ul">
+							<li class="banner_li_li banner_menu_li" id="banner_li_li">
+								<span>CTF学习视频<span class="banner_menu_span">></span></span>
+								<ul class="banner_li_ul_ul">
+									<li class="banner_li_li"><a href="https://space.bilibili.com/57107771"
+											target="_blank" class="banner_li_a">5am3 のB站</a></li>
+									<li class="banner_li_li"><a href="https://space.bilibili.com/87726321"
+											target="_blank" class="banner_li_a">红蓝安全培训教程</a></li>
+									<li class="banner_li_li"><a href="https://space.bilibili.com/207718251/"
+											target="_blank" class="banner_li_a">东秦培训教程</a></li>
+								</ul>
+							</li>
+							<li class="banner_li_li"><a href="https://ctf-wiki.github.io/ctf-wiki/" target="_blank"
+									class="banner_li_a">CTF Wiki</a></li>
+							<li class="banner_li_li"><a href="https://www.ichunqiu.com/" target="_blank"
+									class="banner_li_a">i春秋</a></li>
+							<li class="banner_li_li"><a href="https://buuoj.cn/" target="_blank"
+									class="banner_li_a">BUUCTF</a></li>
+							<li class="banner_li_li"><a href="https://adworld.xctf.org.cn/" target="_blank"
+									class="banner_li_a">攻防世界</a></li>
+							<li class="banner_li_li"><a href="https://www.ctfhub.com/#/index" target="_blank"
+									class="banner_li_a">CTFHub</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- js轮播图Start -->
+	<div class="zixun_before container">
+		<p class="zixun_before_p">js轮播图 没素材了瞎找的图</p>
+	</div>
+
+	<div class="box zixun container" id="box">
+		<div class="slider" id="slider">
+			<div class="slide"><img src="./img/lunbo-2.jpg" alt=""></div>
+			<div class="slide"><img src="./img/lunbo-2.jpg" alt=""></div>
+			<div class="slide"><img src="./img/lunbo-3.jpg" alt=""></div>
+			<div class="slide"><img src="./img/lunbo-4.jpg" alt=""></div>
+			<div class="slide"><img src="./img/lunbo-5.jpg" alt=""></div>
+			<div class="slide"><img src="./img/lunbo-6.jpg" alt=""></div>
+			<div class="slide"><img src="./img/lunbo-2.jpg" alt=""></div>
+		</div>
+		<span id="left">
+			<</span> <span id="right">>
+		</span>
+		<ul class="nav" id="nav">
+			<li class="active"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<script>
+		function getStyle(obj, attr) {
+			if (obj.currentStyle) {
+				return obj.currentStyle[attr];
+			} else {
+				return getComputedStyle(obj, null)[attr];
+			}
+		}
+
+		function animate(obj, json, callback) {
+			clearInterval(obj.timer);
+			obj.timer = setInterval(function () {
+				var isStop = true;
+				for (var attr in json) {
+					var now = 0;
+					if (attr == 'opacity') {
+						now = parseInt(getStyle(obj, attr) * 100);
+					} else {
+						now = parseInt(getStyle(obj, attr));
+					}
+					var speed = (json[attr] - now) / 8;
+					speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+					var cur = now + speed;
+					if (attr == 'opacity') {
+						obj.style[attr] = cur / 100;
+					} else {
+						obj.style[attr] = cur + 'px';
+					}
+					if (json[attr] !== cur) {
+						isStop = false;
+					}
+				}
+				if (isStop) {
+					clearInterval(obj.timer);
+					callback && callback();
+				}
+			}, 30)
+		}
+		var box = document.getElementById('box');
+		var oNavlist = document.getElementById('nav').children;
+		var slider = document.getElementById('slider');
+		var left = document.getElementById('left');
+		var right = document.getElementById('right');
+		var index = 1;
+		var timer;
+		var isMoving = false;
+		box.onmouseover = function () {
+			animate(left, {
+				opacity: 50
+			})
+			animate(right, {
+				opacity: 50
+			})
+			clearInterval(timer)
+		}
+		box.onmouseout = function () {
+			animate(left, {
+				opacity: 0
+			})
+			animate(right, {
+				opacity: 0
+			})
+			timer = setInterval(next, 3000);
+		}
+		right.onclick = next;
+		left.onclick = prev;
+		for (var i = 0; i < oNavlist.length; i++) {
+			oNavlist[i].index = i;
+			oNavlist[i].onclick = function () {
+				index = this.index + 1;
+				navmove();
+				animate(slider, {
+					left: -1200 * index
+				});
+			}
+		}
+
+		function next() {
+			if (isMoving) {
+				return;
+			}
+			isMoving = true;
+			index++;
+			navmove();
+			animate(slider, {
+				left: -1200 * index
+			}, function () {
+				if (index == 6) {
+					slider.style.left = '-1200px';
+					index = 1;
+				}
+				isMoving = false;
+			});
+		}
+
+		function prev() {
+			if (isMoving) {
+				return;
+			}
+			isMoving = true;
+			index--;
+			navmove();
+			animate(slider, {
+				left: -1200 * index
+			}, function () {
+				if (index == 0) {
+					slider.style.left = '-6000px';
+					index = 5;
+				}
+				isMoving = false;
+			});
+		}
+
+		function navmove() {
+			for (var i = 0; i < oNavlist.length; i++) {
+				oNavlist[i].className = "";
+			}
+			if (index > 5) {
+				oNavlist[0].className = "active";
+			} else if (index <= 0) {
+				oNavlist[4].className = "active";
+			} else {
+				oNavlist[index - 1].className = "active";
+			}
+		}
+		timer = setInterval(next, 3000);
+	</script>
+	<!-- js轮播图End -->
+
+	<div class="zixun_before container">
+		<p class="zixun_before_p">时钟</p>
+	</div>
+	<div class="zixun container">
+
+		<div id="time-box">
+		</div>
+		<script type="text/javascript">
+			function showtime() {
+				var date = new Date();
+				//console.log(date);
+				var year = date.getFullYear();
+				var month = date.getMonth() + 1;
+				var day = date.getDate();
+				var hour = date.getHours();
+				if (hour < 10) {
+					hour = '0' + hour;
+				}
+				var minute = date.getMinutes();
+				if (minute < 10) {
+					minute = '0' + minute;
+				}
+				var second = date.getSeconds();
+				if (second < 10) {
+					second = '0' + second;
+				}
+				var time = year + '/' + month + '/' + day + ' ' + hour + ':' + minute + ':' + second;
+				var time1 = document.getElementById('time-box');
+				time1.innerHTML = time;
+				setTimeout(showtime, 1000);
+			}
+			showtime();
+		</script>
+	</div>
+
+	<div class="zixun_before container">
+		<p class="zixun_before_p">比赛实况</p>
+	</div>
+	<div class="zixun container">
+		<div class="zixun_img" id="img11">
+			<div class="zixun_shadow">
+				<p class="zixun_shadow_p">2017-2018全国高校“信息安全铁人三项”总决赛</p>
+			</div>
+		</div>
+		<div class="zixun_img zixun_img_right" id="img12">
+			<div class="zixun_shadow">
+				<p class="zixun_shadow_p">第十二届全国大学生信息安全竞赛</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="zixun_before container">
+		<p class="zixun_before_p">历史比赛荣誉</p>
+	</div>
+	<div class="zixun container" id="zixun2_div">
+		<div class="zixun_img" id="img21">
+			<h1 id="rongyu">战队曾齐心协力获得的荣誉</h1>
+			<ul>
+				<li class="rongyu_li">第十届全国大学生信息安全竞赛“创新实践能力赛”(CISCN)河北省第一名</li>
+				<li class="rongyu_li">2017年全国高校移动互联网应用开发创新大赛(MIAC) 全国三等奖</li>
+				<li class="rongyu_li">第二届“西湖论剑“ 大学生信息安全技能大赛 全国第四名，奖金一万元</li>
+				<li class="rongyu_li">铁人三项赛-华北赛区冠军，奖金5000元</li>
+				<li class="rongyu_li">第十一届全国大学生信息安全竞赛“创新实践能力赛” (CISCN) 全国三等奖</li>
+				<li class="rongyu_li">河北省大学生信息安全竞赛一等奖</li>
+				<li class="rongyu_li">网鼎杯网络安全大赛-高校教育组河北省第一名</li>
+				<li class="rongyu_li">中国网络安全技能竞赛-高校组全国二等奖</li>
+				<li class="rongyu_li">第十二届全国大学生信息安全竞赛“创新实践能力赛” (CISCN) 全国一等奖</li>
+				<li class="rongyu_li"> • • • •</li>
+			</ul>
+		</div>
+		<div class="zixun_img zixun_img_right" id="img22">
+			<div class="zixun_shadow">
+				<p class="zixun_shadow_p">曾获得的荣誉证书</p>
+			</div>
+		</div>
+		<div class="zixun_img" id="img23">
+			<div class="zixun_shadow">
+				<p class="zixun_shadow_p">2018 西湖论剑 • 网络安全大会</p>
+			</div>
+		</div>
+		<div class="zixun_img zixun_img_right" id="img24">
+			<div class="zixun_shadow">
+				<p class="zixun_shadow_p">第十二届全国大学生信息安全竞赛 总决赛</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="zixun_before container">
+		<p class="zixun_before_p">活动基地</p>
+	</div>
+	<div class="zixun container">
+		<div class="zixun_img" id="img31">
+			<div class="zixun_shadow">
+				<p class="zixun_shadow_p">河北省网络与信息安全重点实验室</p>
+			</div>
+		</div>
+		<div class="zixun_img zixun_img_right" id="img32">
+			<div class="zixun_shadow">
+				<p class="zixun_shadow_p">战队的训练日常</p>
+			</div>
+		</div>
+	</div>
+	<div class="zixun_before container">
+
+	</div>
+	<div class="bottom">
+		<div class="container bottom_div">
+			<div class="bottom_left">
+				<h1 class="bottom_left_h1">声明</h1>
+				<p class="bottom_left_p">
+					本页面系2019-2020学年第二学期本人Web开发(一)大作业，仅想通过本页面让 一些与我们同样热爱信息安全的同学 对 CTF比赛以及本校SourceCode战队 有一些了解。
+				</p>
+				<p class="bottom_left_p">
+					由于此精(cu)美(zhi)华(lan)丽(zao)的页面已满足本人大作业要求(请忽略与宣传不相干的用户登录菜单和搜索菜单，┭┮﹏┭┮哭唧唧)，故……算了！憋不出啥正式的话了。一句话，<span
+						class="bottom_left_span">凑合看吧！</span>
+				</p>
+				<img src="img/bq.png" alt="落泪" class="biaoqing">
+				<p class="bottom_left_p" id="bottom_left_p_team">无论什么专业，无论是男是女，只要热爱安全，这里就是你的舞台！更多战队动态详情请添加战队招新群，群号<a
+						name="team"
+						href="https://shang.qq.com/wpa/qunwpa?idkey=1f0ee2e3bf6cf9b1fa8f7666223f17996a24dcc8dfe127d33bb4ab7795dc8744"
+						target="_blank" class="bottom_a">471632246</a>，或点击按钮 <a target="_blank"
+						href="https://shang.qq.com/wpa/qunwpa?idkey=1f0ee2e3bf6cf9b1fa8f7666223f17996a24dcc8dfe127d33bb4ab7795dc8744"><img
+							border="0" src="https://pub.idqqimg.com/wpa/images/group.png" alt="点击加入HEBTU-Sourcecode纳新群"
+							title="点击加入HEBTU-Sourcecode纳新群"></a> 加群，扫描二维码也可以哟~<br><br><span
+						class="bottom_left_span">来吧少年！下一个韩商言，就是你！</span></p>
+				<img src="img/qqqun.jpg" alt="加群二维码" class="qqqun">
+
+			</div>
+			<div class="bottom_right">
+				<h1 class="bottom_right_h1">快捷入口</h1>
+				<p class="bottom_right_p"></p>
+				<ul>
+					<li class="bottom_li"><a target="_blank" href="https://www.ichunqiu.com/" class="bottom_a">爱春秋</a>
+					</li>
+					<li class="bottom_li"><a target="_blank" href="https://ctf-wiki.github.io/ctf-wiki/"
+							class="bottom_a">CTF-Wiki</a></li>
+					<li class="bottom_li"><a target="_blank" href="https://buuoj.cn/" class="bottom_a">BUUCTF</a></li>
+					<li class="bottom_li"><a target="_blank" href="https://adworld.xctf.org.cn/"
+							class="bottom_a">攻防世界</a></li>
+					<li class="bottom_li"><a target="_blank" href="https://www.ctfhub.com/#/index"
+							class="bottom_a">CTFHub</a></li>
+					<li class="bottom_li"><a target="_blank" href="" class="bottom_a">待添加...</a></li>
+					<li class="bottom_li"><a target="_blank" href="" class="bottom_a">待添加...</a></li>
+					<li class="bottom_li"><a target="_blank" href="" class="bottom_a">待添加...</a></li>
+					<li class="bottom_li"><a target="_blank" href="" class="bottom_a">待添加...</a></li>
+				</ul>
+			</div>
+			<div class="bottom_right">
+				<h1 class="bottom_right_h1">快捷入口</h1>
+				<p class="bottom_right_p"></p>
+				<ul>
+					<li class="bottom_li"><a target="_blank" href="https://www.ichunqiu.com/" class="bottom_a">爱春秋</a>
+					</li>
+					<li class="bottom_li"><a target="_blank" href="https://ctf-wiki.github.io/ctf-wiki/"
+							class="bottom_a">CTF-Wiki</a></li>
+					<li class="bottom_li"><a target="_blank" href="https://buuoj.cn/" class="bottom_a">BUUCTF</a></li>
+					<li class="bottom_li"><a target="_blank" href="https://adworld.xctf.org.cn/"
+							class="bottom_a">攻防世界</a></li>
+					<li class="bottom_li"><a target="_blank" href="https://www.ctfhub.com/#/index"
+							class="bottom_a">CTFHub</a></li>
+					<li class="bottom_li"><a target="_blank" href="" class="bottom_a">待添加...</a></li>
+					<li class="bottom_li"><a target="_blank" href="" class="bottom_a">待添加...</a></li>
+					<li class="bottom_li"><a target="_blank" href="" class="bottom_a">待添加...</a></li>
+					<li class="bottom_li"><a target="_blank" href="" class="bottom_a">待添加...</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
