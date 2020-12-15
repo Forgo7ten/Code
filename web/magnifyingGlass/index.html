@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>js实现放大镜 Demo</title>
+	<style>
+		body,
+		ul,
+		li,
+		dl,
+		dt,
+		dd,
+		p,
+		ol,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		form,
+		img,
+		table,
+		fieldset,
+		legend {
+			margin: 0;
+			padding: 0;
+		}
+
+		#box {
+			width: 750px;
+			height: 400px;
+			position: relative;
+			margin: 100px auto;
+			border: 1px solid black;
+		}
+
+		#img1 {
+			width: 300px;
+			height: 300px;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+
+		#slider {
+			width: 150px;
+			height: 150px;
+			position: absolute;
+			left: 0;
+			top: 0;
+			background: #CCC;
+			opacity: 0.4;
+			cursor: move;
+			filter: alpha(opacity=40);
+			display: none;
+		}
+
+		#img2 {
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 400px;
+			height: 400px;
+			overflow: hidden;
+			display: none;
+		}
+
+		#Bimg {
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="box">
+		<div id="img1">
+			<img src="images/small.jpg" width="300" height="300" />
+			<div id="slider"></div>
+		</div>
+
+		<div id="img2">
+			<img src="images/big.jpg" id="Bimg" />
+		</div>
+		<script>
+			function getOffsetLeft(obj) { // 计算距离左侧的像素
+				var tmp = obj.offsetLeft;
+				var val = obj.offsetParent; //找距离此对象最近的父元素
+				while (val != null) { // 如果父元素不为空，继续遍历，直到计算完距离
+					tmp += val.offsetLeft;
+					val = val.offsetParent;
+				}
+				return tmp; //最后返回距离最左侧的距离
+			}
+
+			function getOffsetTop(obj) { // 计算距离顶部的距离，
+				var tmp = obj.offsetTop;
+				var val = obj.offsetParent;
+				while (val != null) {
+					tmp += val.offsetTop;
+					val = val.offsetParent;
+				}
+				return tmp;
+			}
+
+			img1 = document.getElementById("img1");
+			img2 = document.getElementById("img2");
+			slider = document.getElementById("slider");
+			bimg = document.getElementById("Bimg");
+			box = document.getElementById('box');
+			img1.onmouseover = function () {
+				slider.style.display = "block";
+				img2.style.display = "block";
+			}
+			img1.onmouseout = function () {
+				slider.style.display = "none";
+				img2.style.display = "none";
+			}
+
+			img1.onmousemove = function (e) {
+				// x = e.clientX - getOffsetLeft(img1);			//只有一层盒子，不需要递归来获取距离
+				// y = e.clientY - getOffsetTop(img1);
+				x = e.clientX - box.offsetLeft;
+				y = e.clientY - box.offsetTop;
+				lx = (x <= slider.offsetWidth / 2) ? lx = 0 : ((x > slider.offsetWidth / 2 && x < img1.offsetWidth - slider
+					.offsetWidth / 2) ? lx = x - slider.offsetWidth / 2 : lx = img1.offsetWidth - slider.offsetWidth);
+				ty = (y <= slider.offsetHeight / 2) ? ty = 0 : ((y > slider.offsetHeight / 2 && y < img1.offsetHeight -
+						slider.offsetHeight / 2) ? ty = y - slider.offsetHeight / 2 : ty = img1.offsetHeight - slider
+					.offsetHeight);
+				// if (x <= slider.offsetWidth / 2)
+				// 	lx = 0;
+				// else if (x > slider.offsetWidth / 2 && x < img1.offsetWidth - slider.offsetWidth / 2)
+				// 	lx = x - slider.offsetWidth / 2;
+				// else if (x >= img1.offsetWidth - slider.offsetWidth / 2)
+				// 	lx = img1.offsetWidth - slider.offsetWidth;
+
+				// if (y <= slider.offsetHeight / 2)
+				// 	ty = 0;
+				// else if (y > slider.offsetHeight / 2 && y < img1.offsetHeight - slider.offsetHeight / 2)
+				// 	ty = y - slider.offsetHeight / 2;
+				// else if (y >= img1.offsetHeight - slider.offsetHeight / 2)
+				// 	ty = img1.offsetHeight - slider.offsetHeight;
+				console.log(x + " " + y + "   " + lx + " " + ty);
+				slider.style.left = lx + "px";
+				slider.style.top = ty + "px";
+				bimg.style.left = -lx / slider.offsetHeight * img2.offsetHeight + "px"; // 图片的缩放比例
+				bimg.style.top = -ty / slider.offsetHeight * img2.offsetHeight + "px";
+			}
+		</script>
+	</div>
+
+</body>
+
+</html>
