@@ -8,3 +8,4 @@
 - C++：C++代码
 - Web：web代码
 - CTF_challenges：自己出过的CTF题
+- Python：python代码
