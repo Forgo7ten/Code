@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="40dp"
+    android:paddingRight="40dp"
+    tools:context=".fragment.AddBillFragment">
+
+    <TextView
+        android:id="@+id/title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:text="添加账单"
+        android:textSize="50sp" />
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/is_income"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="收入"
+            android:textSize="24sp" />
+
+        <RadioButton
+            android:id="@+id/not_income"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="支出"
+            android:textSize="24sp" />
+    </RadioGroup>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="用途"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/usage_edt"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4" />
+        <ImageView
+            android:id="@+id/usage_but"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@mipmap/drop"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="金额"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/amount_edt"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4" />
+        <ImageView
+            android:id="@+id/amount_but"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@mipmap/drop"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="详细描述"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/des_edt"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:maxLines="4"
+            android:minLines="2" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/date_edt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/select_date_but"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="选择日期"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/submit_but"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="确定"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/finish_but"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="返回"
+        android:textSize="24sp" />
+</LinearLayout>

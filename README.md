@@ -11,4 +11,3 @@
 - Web：web代码
 - CTF_challenges：自己出过的CTF题
 - Python：python代码
-- pythonScrapy：python爬虫

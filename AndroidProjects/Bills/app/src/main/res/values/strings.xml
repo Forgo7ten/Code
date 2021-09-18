@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">HomeWorkOne</string>
+    <string name="create_bills_table_sql"></string>
+</resources>
