@@ -5,6 +5,10 @@
  * @Author Forgo7ten
  * @Date 2020/12/20
  */
+var good_btn_classname = "radio-inline input-xspj input-xspj-1";
+var better_btn_classname = "radio-inline input-xspj input-xspj-2";
+var comment_element_id = "DF16FA9E24666431E0539A01A8C0A321_py";
+var submit_button_id = "btn_xspj_tj";
 
 function sleep(time) {
     return new Promise((resolve) => setTimeout(resolve, time));
@@ -33,7 +37,7 @@ async function autoComments() {
         }
         // 依次进入每个课程的评价
         list[i].click();
-        await sleep(500);
+        await sleep(1000);
         /*
          * 由于方正系统限制不能全部选择【好】选项，采用先用好覆盖len次，然后用较好1次
          * 以此来达到 len-1 个好，一个较好的目的；
@@ -42,28 +46,28 @@ async function autoComments() {
         await good();
 
         async function good() {
-            var good = document.getElementsByClassName("radio-inline input-xspj input-xspj-1");
+            var good = document.getElementsByClassName(good_btn_classname);
             for (var j = 0; j < good.length; j++) {
-                var but = good[j].firstElementChild.firstElementChild;
+                var but = good[j].firstElementChild;
                 but.click();
                 await sleep(100);
             }
         }
-        await sleep(200);
+        await sleep(500);
         await better();
         async function better() {
-            var better = document.getElementsByClassName("radio-inline input-xspj input-xspj-2");
+            var better = document.getElementsByClassName(better_btn_classname);
             betterLen = better.length;
             for (var j = betterLen - 1; j >= betterLen - 1; j--) { // 感觉最后一个选项对老师影响较小，将其改成【较好】
-                var but = better[j].firstElementChild.firstElementChild;
+                var but = better[j].firstElementChild;
                 but.click();
                 await sleep(100);
             }
         }
-        await sleep(200);
+        await sleep(1000);
         // 填写评语：老师很棒
-        var comment = document.getElementById("B5D9189C7D5EAF2BE053D901A8C04891_py");
-        await keyboardInput(comment, "老师很棒！！！");
+        var comment = document.getElementById(comment_element_id);
+        // await keyboardInput(comment, "老师很棒！！！");
 
         function keyboardInput(dom, st) {
             var evt = new InputEvent('input', {
@@ -77,7 +81,9 @@ async function autoComments() {
         };
         await sleep(500);
         // 点击按钮提交评价
-        var submit_button = document.getElementById("btn_xspj_tj");
+        var submit_button = document.getElementById(submit_button_id);
+        // 作弊判断
+        $('#btn_xspj_tj').data("enter","1");
         submit_button.click();
         await sleep(2000);
         // 提示信息：提交成功 点击确定按钮
@@ -109,30 +115,3 @@ async function start() {
 }
 
 start();
-
-
-
-
-
-
-/*************************************************************
-- js sleep的实现
-- 由于直接修改input文本框的value值无法触发相应的输入事件 参考 http://www.fly63.com/article/detial/5935
-- 选项直接修改checked值无法触发相应事件
-
->1.$().prop("checked",true)
-使用prop方法并搭配checked属性实现js点击radio
-prop方法适用于set和get值为true/false的属性的方法如checked selected readyonly
-而且不需要对未点击的radio做处理 很方便
-2.$().click()
-这个方法就比较干脆，直接出发点击事件，不会出现问题
-
-参考 https://blog.csdn.net/u014267351/article/details/50333425
-
-- 
-
-
-
-
-
-*************************************************************/
